@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b4glyomlfn5tc"]
+
+[ext_resource type="Script" uid="uid://cst8kkxnelf3n" path="res://scenes/dot/dot_circle.gd" id="1_swi4y"]
+[ext_resource type="Script" uid="uid://bpc5gl06glkhf" path="res://scenes/dot/dot.gd" id="1_syhbm"]
+[ext_resource type="Script" uid="uid://dt35fo6tdftmm" path="res://scenes/dot/dot_collision.gd" id="2_o7bw8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hyovx"]
+radius = 4.0
+
+[node name="Dot" type="Area2D" unique_id=140434416]
+script = ExtResource("1_syhbm")
+metadata/_edit_group_ = true
+
+[node name="DotCircle" type="Node2D" parent="." unique_id=243201838]
+script = ExtResource("1_swi4y")
+
+[node name="DotCollision" type="CollisionShape2D" parent="." unique_id=289175896]
+shape = SubResource("CircleShape2D_hyovx")
+debug_color = Color(0, 0.6, 0.69803923, 0.8745098)
+script = ExtResource("2_o7bw8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b1fv78ipd0sro"]
+
+[ext_resource type="Script" uid="uid://cjbleqisuefx0" path="res://scenes/player_info_container/player_info_container.gd" id="1_m5kwd"]
+
+[node name="PlayerInfoContainer" type="VBoxContainer" unique_id=1425029417]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+script = ExtResource("1_m5kwd")
+
+[node name="TitleLabel" type="Label" parent="." unique_id=643240075]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+
+[node name="GridContainer" type="VBoxContainer" parent="." unique_id=773546473]
+layout_mode = 2
+size_flags_stretch_ratio = 1.42
+
+[node name="NameLabel" type="Label" parent="GridContainer" unique_id=273417157]
+layout_mode = 2
+text = "name"
+
+[node name="NameEdit" type="LineEdit" parent="GridContainer" unique_id=750606087]
+layout_mode = 2
+
+[node name="ColorLabel" type="Label" parent="GridContainer" unique_id=1931291827]
+layout_mode = 2
+text = "color"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="GridContainer" unique_id=382401048]
+layout_mode = 2
+text = "color"
+edit_alpha = false
+
+[node name="KeysLabel" type="Label" parent="GridContainer" unique_id=2146871763]
+layout_mode = 2
+text = "keys"
+
+[node name="KeysOption" type="OptionButton" parent="GridContainer" unique_id=1674862680]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0

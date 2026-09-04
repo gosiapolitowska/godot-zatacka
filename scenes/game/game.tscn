@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://ksgk5odg00rb"]
+
+[ext_resource type="Script" uid="uid://epje8uflto6j" path="res://scenes/game/game.gd" id="1_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://5tu3pbimfj1d" path="res://scenes/ui/ui.tscn" id="2_kelw5"]
+[ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://assets/FlatUI4/kenneyUI-green.tres" id="2_lfrn8"]
+[ext_resource type="PackedScene" uid="uid://dchhivnm1cm6h" path="res://scenes/play_area/play_area.tscn" id="3_lfrn8"]
+[ext_resource type="PackedScene" uid="uid://bjulgp5ngruk0" path="res://scenes/player_panel/player_panel.tscn" id="4_lfrn8"]
+
+[node name="Game" type="Node" unique_id=1475631694]
+script = ExtResource("1_0sr1o")
+
+[node name="Background" type="ColorRect" parent="." unique_id=281298219]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.53333336, 0.8784314, 0.3764706, 1)
+
+[node name="GameStartTimer" type="Timer" parent="." unique_id=1186546819]
+unique_name_in_owner = true
+wait_time = 2.0
+one_shot = true
+
+[node name="GameArea" type="Control" parent="." unique_id=913230349]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_lfrn8")
+
+[node name="PlayAreaRect" type="ColorRect" parent="GameArea" unique_id=203662715]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -320.0
+offset_bottom = -20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.2784314, 0.5137255, 0.17254902, 1)
+
+[node name="PlayArea" parent="GameArea" unique_id=1922575906 instance=ExtResource("3_lfrn8")]
+position = Vector2(20, 20)
+
+[node name="PlayerPanel" parent="GameArea" unique_id=261875732 instance=ExtResource("4_lfrn8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.83300006
+offset_left = 0.6398926
+
+[node name="Ui" parent="." unique_id=2059567127 instance=ExtResource("2_kelw5")]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="GameStartTimer" to="." method="on_start_timer_timeout"]

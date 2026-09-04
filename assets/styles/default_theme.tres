@@ -1,0 +1,39 @@
+[gd_resource type="Theme" format=3 uid="uid://bm8oe8tsslks0"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_hyovx"]
+color = Color(0.11404257, 0.26651973, 7.2196127e-07, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50bnw"]
+bg_color = Color(0.11404257, 0.26651973, 7.2196127e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cefca"]
+bg_color = Color(0.11404257, 0.26651973, 7.2196127e-07, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fmdpk"]
+color = Color(0.11404257, 0.26651973, 7.2196127e-07, 1)
+thickness = 2
+vertical = true
+
+[resource]
+BoxContainer/constants/separation = 10
+Button/colors/font_color = Color(0.11404257, 0.26651973, 7.2196127e-07, 1)
+Button/font_sizes/font_size = 36
+FlowContainer/constants/h_separation = 10
+FlowContainer/constants/v_separation = 10
+HSeparator/constants/separation = 2
+HSeparator/styles/separator = SubResource("StyleBoxLine_hyovx")
+Label/colors/font_color = Color(0.11404257, 0.26651973, 7.2196127e-07, 1)
+Label/font_sizes/font_size = 20
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20
+SpinBox/styles/down_background = SubResource("StyleBoxFlat_50bnw")
+SpinBox/styles/up_background = SubResource("StyleBoxFlat_cefca")
+VSeparator/constants/separation = 2
+VSeparator/styles/separator = SubResource("StyleBoxLine_fmdpk")
