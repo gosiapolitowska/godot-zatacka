@@ -3,19 +3,19 @@ class_name PlayerInfo
 var id: int
 var color: Color
 var name: String
-var keys_index: int
+var binding_index: int
 var alive: bool = true
 var place: int = 0
 var sec_lived: int = 0
 
-func _init(id: int, color: Color, name: String, keys_index: int) -> void:
+func _init(id: int, color: Color, name: String, binding_index: int) -> void:
 	self.id = id
 	self.color = color
 	self.name = name
-	self.keys_index = keys_index
+	self.binding_index = binding_index
 
 func _to_string() -> String:
-	return "Player{ %s, %s, %s, %s, %s }" % [id, name, keys_index, sec_lived, place]
+	return "Player{ %s, %s, %s, %s, %s }" % [id, name, binding_index, sec_lived, place]
 
 func revive():
 	alive = true

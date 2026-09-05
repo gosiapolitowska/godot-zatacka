@@ -38,7 +38,7 @@ func get_keyboard_icon(input_action: String, index: int = 0) -> Texture2D:
 	# Add key after
 	if input_event is InputEventKey:
 		# Get the OS keycode string (this ignores the modifiers and lets us get just the key)
-		var key_name: String = OS.get_keycode_string(input_event.physical_keycode).to_lower()
+		var key_name: String = OS.get_keycode_string(input_event.physical_keycode).to_lower().replace(" ", "_")
 		# arrow keys are named specially for user to setup easier
 		if key_name == "up" or key_name == "down" or key_name == "left" or key_name == "right":
 			key_name = key_name.insert(0, "arrow_")

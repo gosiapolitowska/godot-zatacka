@@ -2,7 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://assets/FlatUI4/kenneyUI-green.tres" id="1_aac20"]
 [ext_resource type="Script" uid="uid://k4t8r62iiswv" path="res://scenes/ui/ui.gd" id="2_nltto"]
+[ext_resource type="PackedScene" uid="uid://g3r6imgi14pq" path="res://scenes/ui_elements/label_title.tscn" id="3_0dwhk"]
 [ext_resource type="PackedScene" uid="uid://cye05ie8d48le" path="res://scenes/alert/alert.tscn" id="3_ibotj"]
+[ext_resource type="PackedScene" uid="uid://psrai5eo0sde" path="res://scenes/ui_elements/label_big.tscn" id="4_pfayw"]
 
 [node name="Ui" type="Control" unique_id=2059567127]
 layout_mode = 3
@@ -36,11 +38,9 @@ grow_vertical = 2
 [node name="MainContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer" unique_id=1458653112]
 layout_mode = 2
 
-[node name="TitleLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/MainContainer" unique_id=660493544]
+[node name="Title" parent="MarginContainer/Panel/MarginContainer/MainContainer" unique_id=51299978 instance=ExtResource("3_0dwhk")]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 52
-text = "Snakes Game"
+text = "Zatacka"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -51,10 +51,8 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PlayerCountLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=1258732206]
+[node name="PlayerCount" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=872300462 instance=ExtResource("4_pfayw")]
 layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 32
 text = "Number of players"
 
 [node name="PlayerCountPanel" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=1658168590]
@@ -64,9 +62,8 @@ layout_mode = 2
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=1551461981]
 layout_mode = 2
 
-[node name="PlayerConfigLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=1847724956]
+[node name="PlayerConfig" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=1911578385 instance=ExtResource("4_pfayw")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 text = "Player configuration"
 
 [node name="PlayerConfigGrid" type="GridContainer" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=709759843]
@@ -78,19 +75,21 @@ theme_override_constants/v_separation = 20
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=1002972043]
 layout_mode = 2
 
-[node name="GameConfigLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=862957136]
+[node name="GameConfig" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=1551682167 instance=ExtResource("4_pfayw")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 text = "Game Configuration"
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=576951096]
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 columns = 3
 
 [node name="SpeedLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/GridContainer" unique_id=1676731866]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_vertical = 6
 text = "Speed"
+vertical_alignment = 1
 
 [node name="SpeedValueLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/GridContainer" unique_id=1349226216]
 unique_name_in_owner = true
@@ -102,12 +101,14 @@ text = "dummy"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+size_flags_vertical = 4
 step = 50.0
 ticks_on_borders = true
 
 [node name="RotationLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/GridContainer" unique_id=71487103]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_vertical = 6
 text = "Rotation speed"
 
 [node name="RotationValueLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/GridContainer" unique_id=473996776]
@@ -120,12 +121,14 @@ text = "lol"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+size_flags_vertical = 4
 step = 0.1
 ticks_on_borders = true
 
 [node name="SizeLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/GridContainer" unique_id=113560365]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_vertical = 6
 text = "Player size"
 
 [node name="SizeValueLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/GridContainer" unique_id=582959104]
@@ -138,6 +141,7 @@ text = "random"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+size_flags_vertical = 4
 step = 4.0
 ticks_on_borders = true
 

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://n8sfd1o626wy"]
+
+[ext_resource type="Texture2D" uid="uid://c2ylng5a8w3c6" path="res://assets/icons/key-c.png" id="1_dlgcv"]
+[ext_resource type="Texture2D" uid="uid://v8q2kpab8sf6" path="res://assets/icons/key-x.png" id="2_q15pt"]
+[ext_resource type="Script" uid="uid://dj4uck2kym5o1" path="res://scenes/ui_elements/binding_selector.gd" id="3_q15pt"]
+
+[node name="BindingSelector" type="OptionButton" unique_id=1286925176]
+offset_right = 40.0
+offset_bottom = 20.0
+item_count = 2
+popup/item_0/icon = ExtResource("1_dlgcv")
+popup/item_0/id = 0
+popup/item_1/icon = ExtResource("2_q15pt")
+popup/item_1/id = 1
+script = ExtResource("3_q15pt")

@@ -63,5 +63,5 @@ func create_players():
 func _draw() -> void:
 	for color in lines:
 		var line = lines.get(color)
-		if not line.is_empty():
+		if line.size() > 1:
 			draw_polyline(line, color, Globals.line_width)

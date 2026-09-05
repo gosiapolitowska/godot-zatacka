@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bkytqpo0g6alj"]
+
+[ext_resource type="Script" uid="uid://cufwwjdpqtq8g" path="res://scenes/ui_elements/player_name_label.gd" id="1_82kqe"]
+
+[node name="PlayerNameLabel" type="Label" unique_id=1884230857]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 32
+script = ExtResource("1_82kqe")

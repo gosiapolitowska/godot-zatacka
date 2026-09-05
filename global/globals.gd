@@ -2,14 +2,7 @@ extends Node
 
 enum PlayerModifiedType { CREATED, UPDATED }
 
-var key_combinations = [
-	["left", "down"],
-	["X", "C"],
-	[".", "/"],
-	["Q", "W"],
-	["+", "-"],
-	["N", "M"]
-]
+var action_bindings: Array[Array] = []
 
 var default_colors = [
 	Color(0.949, 0.451, 0.831, 1.0),
@@ -22,14 +15,14 @@ var default_colors = [
 
 var default_names = ["Matcha", "Onigiri", "Sakura", "Torii", "Mochi", "Matsuri"]
 
-var max_players: int = key_combinations.size()
+var max_players: int = 6
 var min_players: int = 1
 var default_player_count: int = 4
 
 var nth = {
 	1: "1st",
 	2: "2nd",
-	3: "3th",
+	3: "3rd",
 	4: "4th",
 	5: "5th",
 	6: "6th",
@@ -51,6 +44,9 @@ var line_width: int = player_size_min
 func _init() -> void:
 	default_names.shuffle()
 	default_colors.shuffle()
+	for i in range(max_players):
+		action_bindings.append(["left_%s" % i, "right_%s" % i])
+	action_bindings.shuffle()
 
 func seconds_to_string(time_in_sec: int):
 	var seconds = time_in_sec % 60

@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://d1ixs6ulcoboe"]
 
 [ext_resource type="Script" uid="uid://xymgrpjd4n0s" path="res://scenes/active_player_info_box/active_player_info_box.gd" id="1_thl36"]
-[ext_resource type="Texture2D" uid="uid://ccsos03s4wkdn" path="res://addons/godot_input_icons/assets/input_atlas_textures/keyboard/arrow_keys/key_arrow_left.tres" id="2_1g3ag"]
-[ext_resource type="Script" uid="uid://d2a2relwnivg5" path="res://addons/godot_input_icons/input_icon_texture_rect.gd" id="3_5qnmd"]
-[ext_resource type="Texture2D" uid="uid://dxod825q1ar6b" path="res://addons/godot_input_icons/assets/input_atlas_textures/keyboard/arrow_keys/key_arrow_down.tres" id="4_tdihm"]
+[ext_resource type="PackedScene" uid="uid://bkytqpo0g6alj" path="res://scenes/ui_elements/player_name_label.tscn" id="2_1g3ag"]
 
 [node name="ActivePlayerInfoBox" type="Control" unique_id=404675153]
 custom_minimum_size = Vector2(0, 50)
@@ -26,33 +24,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 2
 
-[node name="NameLabel" type="Label" parent="Container" unique_id=1095503438]
+[node name="NameLabel" parent="Container" unique_id=1884230857 instance=ExtResource("2_1g3ag")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 24
-text = "Dummy"
 
-[node name="KeyLeft" type="TextureRect" parent="Container" unique_id=241524671]
+[node name="ActionsRect" type="TextureRect" parent="Container" unique_id=679719469]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_1g3ag")
-script = ExtResource("3_5qnmd")
-action_name = &"left_1"
-metadata/_custom_type_script = "uid://d2a2relwnivg5"
-
-[node name="KeyRight" type="TextureRect" parent="Container" unique_id=35273256]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(36, 36)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("4_tdihm")
-script = ExtResource("3_5qnmd")
-action_name = &"right_1"
-metadata/_custom_type_script = "uid://d2a2relwnivg5"

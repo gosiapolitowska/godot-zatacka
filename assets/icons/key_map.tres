@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InputIconMap" format=3 uid="uid://poa5pnkbr2xy"]
+
+[ext_resource type="Script" uid="uid://db0gxldvhci3p" path="res://addons/godot_input_icons/resources/controller_icons.gd" id="1_loli2"]
+[ext_resource type="Resource" uid="uid://cn42ljpsxwe26" path="res://assets/icons/key_icons.tres" id="2_3unwh"]
+[ext_resource type="Script" uid="uid://dth3wa8g0tv2g" path="res://addons/godot_input_icons/resources/input_icon_map.gd" id="2_mxt4o"]
+
+[resource]
+script = ExtResource("2_mxt4o")
+keyboard_icons = ExtResource("2_3unwh")
+metadata/_custom_type_script = "uid://dth3wa8g0tv2g"

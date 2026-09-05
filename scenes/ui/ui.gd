@@ -62,6 +62,7 @@ func on_size_changed(size: float):
 func add_button(n: int) -> void:
 	var button = Button.new()
 	button.text = str(n)
+	button.custom_minimum_size = Vector2(100, 0)
 	button.pressed.connect(on_player_count_selected.bind(n))
 	count_panel.add_child(button)
 
@@ -85,7 +86,7 @@ func _on_start_button_pressed() -> void:
 	var players = PlayerManager.players
 	var errors = []
 	
-	if is_not_unique(players, func(player: PlayerInfo): return player.keys_index):
+	if is_not_unique(players, func(player: PlayerInfo): return player.binding_index):
 		errors.append("All players must have unique key bindings")
 	if is_not_unique(players, func(player: PlayerInfo): return player.color):
 		errors.append("All players must have unique colors")

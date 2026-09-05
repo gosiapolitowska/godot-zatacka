@@ -51,6 +51,12 @@ extends Resource
 @export var key_8: Texture2D
 @export var key_9: Texture2D
 
+# Key Pad
+@export_group("Key Pad")
+@export var key_kp_add: Texture2D
+@export var key_kp_subtract: Texture2D
+@export var key_kp_period: Texture2D
+
 # Special Keys
 @export_group("Special Keys")
 @export var key_space: Texture2D
@@ -71,6 +77,7 @@ extends Resource
 @export var key_bracketleft: Texture2D
 @export var key_bracketright: Texture2D
 @export var key_minus: Texture2D
+@export var key_plus: Texture2D
 @export var key_equal: Texture2D
 @export var key_slash: Texture2D
 @export var key_backslash: Texture2D

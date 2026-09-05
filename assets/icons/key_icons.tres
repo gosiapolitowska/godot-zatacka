@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="KeyboardIcons" format=3 uid="uid://cn42ljpsxwe26"]
+
+[ext_resource type="Script" uid="uid://c3ievetg3ws5h" path="res://addons/godot_input_icons/resources/keyboard_icons.gd" id="1_26fel"]
+[ext_resource type="Texture2D" uid="uid://ck7sc5qluxr2k" path="res://assets/icons/key-arrow-down.png" id="1_fsqhj"]
+[ext_resource type="Texture2D" uid="uid://dyj7b2ffgeylp" path="res://assets/icons/key-arrow-left.png" id="2_38eis"]
+[ext_resource type="Texture2D" uid="uid://byk53a1ef1a4t" path="res://assets/icons/key-arrow-right.png" id="3_70geq"]
+[ext_resource type="Texture2D" uid="uid://c2ylng5a8w3c6" path="res://assets/icons/key-c.png" id="4_7bfb6"]
+[ext_resource type="Texture2D" uid="uid://dvfvi1k320iqa" path="res://assets/icons/key-coma.png" id="5_cu1oh"]
+[ext_resource type="Texture2D" uid="uid://2t2u788w8u0i" path="res://assets/icons/key-m.png" id="6_6sglm"]
+[ext_resource type="Texture2D" uid="uid://dgps5h22hmcdo" path="res://assets/icons/key-minus.png" id="7_a5aij"]
+[ext_resource type="Texture2D" uid="uid://bb8ranaidhn5l" path="res://assets/icons/key-n.png" id="8_kiq36"]
+[ext_resource type="Texture2D" uid="uid://c5lilg6dwvojr" path="res://assets/icons/key-dot.png" id="9_qi5tr"]
+[ext_resource type="Texture2D" uid="uid://twsdylgt47kq" path="res://assets/icons/key-plus.png" id="10_38eis"]
+[ext_resource type="Texture2D" uid="uid://bt22bfakwj6i" path="res://assets/icons/key-q.png" id="10_tx08k"]
+[ext_resource type="Texture2D" uid="uid://c82boj4su5e5l" path="res://assets/icons/key-w.png" id="11_vnse3"]
+[ext_resource type="Texture2D" uid="uid://v8q2kpab8sf6" path="res://assets/icons/key-x.png" id="12_5l5id"]
+[ext_resource type="Texture2D" uid="uid://7u5cgk1hqg7y" path="res://assets/icons/key-slash.png" id="12_70geq"]
+
+[resource]
+script = ExtResource("1_26fel")
+key_c = ExtResource("4_7bfb6")
+key_m = ExtResource("6_6sglm")
+key_n = ExtResource("8_kiq36")
+key_q = ExtResource("10_tx08k")
+key_w = ExtResource("11_vnse3")
+key_x = ExtResource("12_5l5id")
+key_kp_add = ExtResource("10_38eis")
+key_kp_subtract = ExtResource("7_a5aij")
+key_comma = ExtResource("5_cu1oh")
+key_period = ExtResource("9_qi5tr")
+key_minus = ExtResource("7_a5aij")
+key_plus = ExtResource("10_38eis")
+key_slash = ExtResource("12_70geq")
+key_arrow_down = ExtResource("1_fsqhj")
+key_arrow_left = ExtResource("2_38eis")
+key_arrow_right = ExtResource("3_70geq")
+metadata/_custom_type_script = "uid://c3ievetg3ws5h"

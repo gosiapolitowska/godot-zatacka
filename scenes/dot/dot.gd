@@ -20,7 +20,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not moving:
 		return
-	rotation_direction = Input.get_axis("left_%s" % player_info.keys_index, "right_%s" % player_info.keys_index)
+	var actions = Globals.action_bindings[player_info.binding_index]
+	rotation_direction = Input.get_axis(actions[0], actions[1])
 	rotation += rotation_direction * rotation_speed * delta
 	
 	var velocity = Vector2.RIGHT * speed * delta

@@ -1,33 +1,33 @@
 extends VBoxContainer
 
-@onready var label = $TitleLabel
+@onready var label = $PlayerNameLabel
 @onready var color_picker = $GridContainer/ColorPickerButton
 @onready var name_input = $GridContainer/NameEdit
-@onready var keys_option = $GridContainer/KeysOption
+@onready var binding_selector = %BindingSelector
 
 var player_info: PlayerInfo
 
 func _ready() -> void:
-	label.text = player_info.name
 	color_picker.color = player_info.color
 	name_input.text = player_info.name
+	binding_selector.select(player_info.binding_index)
 	
-	keys_option.clear()
-	for i in range(Globals.key_combinations.size()):
-		var item = Globals.key_combinations[i]
-		keys_option.add_item("%s %s" % [item[0], item[1]], i)
-	keys_option.select(player_info.keys_index)
-	
+	update()
 	name_input.text_changed.connect(on_name_changed)
 	color_picker.color_changed.connect(on_color_changed)
-	keys_option.item_selected.connect(on_keys_changed)
+	binding_selector.item_selected.connect(on_keys_changed)
 
 func on_name_changed(player_name: String):
 	player_info.name = player_name
-	label.text = player_name
+	update()
 
 func on_color_changed(color: Color):
 	player_info.color = color
+	update()
 
 func on_keys_changed(index: int):
-	player_info.keys_index = index
+	player_info.binding_index = index
+
+func update():
+	label.text = player_info.name
+	label.color = player_info.color
