@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bl6ti6rs62c7w"]
 
 [ext_resource type="Script" uid="uid://bilwtkvsckjow" path="res://scenes/dead_player_info_box/dead_player_info_box.gd" id="1_ejcqw"]
+[ext_resource type="PackedScene" uid="uid://c8rmvdjqlywev" path="res://scenes/ui_elements/point_indicator.tscn" id="2_f0pe0"]
 [ext_resource type="PackedScene" uid="uid://bkytqpo0g6alj" path="res://scenes/ui_elements/player_name_label.tscn" id="2_ofbll"]
 [ext_resource type="PackedScene" uid="uid://b02iukaopp3c0" path="res://scenes/ui_elements/label_small.tscn" id="3_v7qsb"]
 
@@ -14,30 +15,37 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ejcqw")
 
-[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=234183933]
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=2118373385]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 72.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
 
-[node name="VBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=1957438471]
-layout_mode = 2
-
-[node name="PlaceLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1636470085]
+[node name="PointIndicator" parent="HBoxContainer2" unique_id=1210030477 instance=ExtResource("2_f0pe0")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 8
-text = "1st"
+size_flags_vertical = 4
 
-[node name="NameLabel" parent="HBoxContainer/VBoxContainer" unique_id=1884230857 instance=ExtResource("2_ofbll")]
+[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer2" unique_id=234183933]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameLabel" parent="HBoxContainer2/HBoxContainer" unique_id=1884230857 instance=ExtResource("2_ofbll")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 8
+theme_override_font_sizes/font_size = 28
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 5
 
-[node name="ScoreLabel" parent="HBoxContainer" unique_id=594846527 instance=ExtResource("3_v7qsb")]
+[node name="LivedLabel" parent="HBoxContainer2/HBoxContainer" unique_id=594846527 instance=ExtResource("3_v7qsb")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0

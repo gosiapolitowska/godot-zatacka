@@ -1,10 +1,10 @@
 class_name TextureGenerator
 extends Node
 
-const gap = 10
+#var margin := -10
+var cutoff := 7
 
 func generate(action1: String, action2: String, max_height: float = -1.0) -> Texture2D:
-	Log.debug("generating texture for %s / %s" % [action1, action2])
 	var icon1 = InputIconTextureRect.new()
 	icon1.action_name = action1
 	var texture1 = icon1.texture
@@ -13,9 +13,10 @@ func generate(action1: String, action2: String, max_height: float = -1.0) -> Tex
 	icon2.action_name = action2
 	var texture2 = icon2.texture
 	
-	var combined = Image.create_empty(texture1.get_size().x * 2 + gap, texture1.get_size().y, false, Image.FORMAT_RGBA8)
-	combined.blit_rect(texture1.get_image(), Rect2(Vector2.ZERO, texture1.get_size()), Vector2.ZERO)
-	combined.blit_rect(texture2.get_image(), Rect2(Vector2.ZERO, texture2.get_size()), Vector2(texture1.get_size().x + gap, 0))
+	var combined = Image.create_empty(texture1.get_size().x * 2 - 4 * cutoff, texture1.get_size().y - 2 * cutoff, false, Image.FORMAT_RGBA8)
+	var cutoff_v = Vector2(cutoff, cutoff)
+	combined.blit_rect(texture1.get_image(), Rect2(cutoff_v, texture1.get_size() - 2 * cutoff_v), Vector2.ZERO)
+	combined.blit_rect(texture2.get_image(), Rect2(cutoff_v, texture2.get_size() - 2 * cutoff_v), Vector2(texture1.get_size().x - 2 * cutoff, 0))
 	
 	var texture = ImageTexture.create_from_image(combined)
 	var texture_height = texture.get_size().y

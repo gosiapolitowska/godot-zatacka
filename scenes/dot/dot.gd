@@ -1,44 +1,53 @@
 class_name Dot
 extends Area2D
 
+signal collided(player: PlayerInfo)
+signal moved(from: Vector2, to: Vector2, player: PlayerInfo)
+
 @onready var collision = $DotCollision
 @onready var circle = $DotCircle
 
-@onready var speed = Globals.speed
-@onready var rotation_speed = Globals.rotation_speed
-@onready var size: int = Globals.player_size
-var rotation_direction = 0
+var _speed: int
+var _rotation_speed: float
+var _player_size: int
+var _player_info: PlayerInfo
 
-var player_info: PlayerInfo
-var moving = false
+var _rotation_direction := 0.0
+var _moving = false
+
+func with_values(dot_config: DotConfig, player_info: PlayerInfo) -> Dot:
+	_speed = dot_config.speed
+	_rotation_speed = dot_config.rotation_speed
+	_player_size = dot_config.player_size
+	_player_info = player_info
+	return self
 
 func _ready() -> void:
-	collision.size = size
-	circle.size = size
-	circle.color = player_info.color
+	collision.size = _player_size
+	circle.size = _player_size
+	circle.color = _player_info.color
 
 func _process(delta: float) -> void:
-	if not moving:
+	if not _moving:
 		return
-	var actions = Globals.action_bindings[player_info.binding_index]
-	rotation_direction = Input.get_axis(actions[0], actions[1])
-	rotation += rotation_direction * rotation_speed * delta
+	_rotation_direction = Input.get_axis(_player_info.actions[0], _player_info.actions[1])
+	rotation += _rotation_direction * _rotation_speed * delta
 	
-	var velocity = Vector2.RIGHT * speed * delta
+	var velocity = Vector2.RIGHT * _speed * delta
 	var old_position = position
 	position += velocity.rotated(rotation)
 	
-	SignalBus.player_moved.emit(old_position, position, player_info.color)
+	moved.emit(old_position, position, _player_info)
 
 func _on_area_entered(_area: Area2D) -> void:
-	if moving:
-		SignalBus.collided.emit(player_info.id)
-		moving = false
+	if _moving:
+		collided.emit(_player_info)
+		_moving = false
 	queue_free()
 
 func stop():
-	moving = false
+	_moving = false
 	queue_free()
 
 func start():
-	moving = true
+	_moving = true

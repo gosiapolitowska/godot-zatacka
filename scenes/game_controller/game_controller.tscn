@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dchhivnm1cm6h"]
+
+[ext_resource type="Script" uid="uid://bhs5yhb30pnou" path="res://scenes/game_controller/game_controller.gd" id="1_420aq"]
+[ext_resource type="Script" uid="uid://b4qd0ny8ypjlu" path="res://scenes/game_controller/play_area.gd" id="2_c3f1a"]
+
+[sub_resource type="Curve2D" id="Curve2D_eow3j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 205, 445, 0, 0, 0, 0, 304, 176, -171.43636, 0, 171.43636, 0, 746, 132, -78.54654, -63.520245, 78.54654, 63.520245, 1144, 208, 0, 0, 0, 0, 1232, 456, 0, 0, 0, 0, 1152, 728, 0, 0, 0, 0, 742, 776, 0, 0, 0, 0, 264, 728, 0, 0, 0, 0, 205, 445)
+}
+point_count = 9
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmdpk"]
+size = Vector2(40, 1040)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyovx"]
+size = Vector2(1656, 40)
+
+[node name="GameController" type="Control" unique_id=374257912 node_paths=PackedStringArray("play_area")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_420aq")
+play_area = NodePath("PlayArea")
+
+[node name="PlayArea" type="Area2D" parent="." unique_id=1922575906]
+script = ExtResource("2_c3f1a")
+
+[node name="Path2D" type="Path2D" parent="PlayArea" unique_id=1305253354]
+position = Vector2(72, 72)
+curve = SubResource("Curve2D_eow3j")
+
+[node name="PlayerSpawn" type="PathFollow2D" parent="PlayArea/Path2D" unique_id=219242421]
+unique_name_in_owner = true
+position = Vector2(205, 445)
+rotation = -1.2181505
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea" unique_id=1644905745]
+position = Vector2(-20, 520)
+shape = SubResource("RectangleShape2D_fmdpk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="PlayArea" unique_id=915938181]
+position = Vector2(1600, 520)
+shape = SubResource("RectangleShape2D_fmdpk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayArea" unique_id=1434405536]
+position = Vector2(788, -20)
+shape = SubResource("RectangleShape2D_hyovx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="PlayArea" unique_id=1256494021]
+position = Vector2(788, 1060)
+shape = SubResource("RectangleShape2D_hyovx")

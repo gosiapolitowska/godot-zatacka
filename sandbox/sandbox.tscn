@@ -2,9 +2,21 @@
 
 [ext_resource type="Script" uid="uid://b2mm06kr6u5re" path="res://sandbox/sandbox.gd" id="1_vos54"]
 [ext_resource type="Script" uid="uid://dd6umwdn5q7f6" path="res://sandbox/node_2d.gd" id="2_6gs2s"]
+[ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://assets/FlatUI4/kenneyUI-green.tres" id="3_djyae"]
+[ext_resource type="Script" uid="uid://bqtucpwckssm7" path="res://sandbox/control.gd" id="4_djyae"]
 
 [node name="Sandbox" type="Node" unique_id=125859772]
 script = ExtResource("1_vos54")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=606819065]
 script = ExtResource("2_6gs2s")
+
+[node name="Control" type="Control" parent="." unique_id=1936415912]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_djyae")
+script = ExtResource("4_djyae")

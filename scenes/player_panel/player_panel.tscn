@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bjulgp5ngruk0"]
 
 [ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://assets/FlatUI4/kenneyUI-green.tres" id="1_k5xvv"]
-[ext_resource type="Script" uid="uid://cdnshhbxaclvf" path="res://scenes/player_panel/player_panel.gd" id="1_wdymb"]
+[ext_resource type="Script" uid="uid://b3x6gaxwkjyuy" path="res://scenes/player_panel/player_panel.gd" id="1_wdymb"]
 [ext_resource type="PackedScene" uid="uid://psrai5eo0sde" path="res://scenes/ui_elements/label_big.tscn" id="3_kl0xi"]
+[ext_resource type="Script" uid="uid://cdnshhbxaclvf" path="res://scenes/player_panel/panel.gd" id="3_t28tu"]
+[ext_resource type="PackedScene" uid="uid://c8rmvdjqlywev" path="res://scenes/ui_elements/point_indicator.tscn" id="5_ebih3"]
 
-[node name="PlayerPanel" type="Control" unique_id=261875732]
+[node name="PlayerPanel" type="Control" unique_id=261875732 node_paths=PackedStringArray("ui")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +14,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_k5xvv")
+script = ExtResource("1_wdymb")
+ui = NodePath("MarginContainer2/Panel")
 
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1611131230]
 layout_mode = 1
@@ -23,7 +27,7 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="MarginContainer2" unique_id=394899632]
 layout_mode = 2
-script = ExtResource("1_wdymb")
+script = ExtResource("3_t28tu")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/Panel" unique_id=45578802]
 layout_mode = 1
@@ -36,11 +40,29 @@ grow_vertical = 2
 [node name="Container" type="VBoxContainer" parent="MarginContainer2/Panel/MarginContainer" unique_id=2017028645]
 layout_mode = 2
 
-[node name="ActivePlayersLabel" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=872300462 instance=ExtResource("3_kl0xi")]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=49175607]
+layout_mode = 2
+
+[node name="RoundLabel" parent="MarginContainer2/Panel/MarginContainer/Container/HBoxContainer" unique_id=872300462 instance=ExtResource("3_kl0xi")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Round"
+horizontal_alignment = 1
+
+[node name="RoundIndicator" parent="MarginContainer2/Panel/MarginContainer/Container/HBoxContainer" unique_id=1210030477 instance=ExtResource("5_ebih3")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=1254442809]
+layout_mode = 2
+
+[node name="ActivePlayersLabel" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=1081731192 instance=ExtResource("3_kl0xi")]
+visible = false
 layout_mode = 2
 text = "Active Players"
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="ActivePlayerContainer" type="VBoxContainer" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=1256432907]
 unique_name_in_owner = true
@@ -50,10 +72,10 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="DeadPlayersLabel" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=671998669 instance=ExtResource("3_kl0xi")]
+visible = false
 layout_mode = 2
-text = "Ranking"
+text = "Round Ranking"
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="DeadPlayerContainer" type="VBoxContainer" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=642529838]
 unique_name_in_owner = true
@@ -63,14 +85,17 @@ size_flags_vertical = 3
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=1563370095]
 layout_mode = 2
 
-[node name="ReplayButton" type="Button" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=71795261]
+[node name="NextRoundButton" type="Button" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=71795261]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Replay"
+text = "Next Round"
 
-[node name="BackButton" type="Button" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=1570199602]
+[node name="MenuButton" type="Button" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=1570199602]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Menu"
 
 [node name="QuitButton" type="Button" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=1475800416]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Quit"
+text = "Quit Game"

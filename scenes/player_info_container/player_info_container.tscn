@@ -1,34 +1,57 @@
 [gd_scene format=3 uid="uid://b1fv78ipd0sro"]
 
 [ext_resource type="Script" uid="uid://cjbleqisuefx0" path="res://scenes/player_info_container/player_info_container.gd" id="1_m5kwd"]
-[ext_resource type="PackedScene" uid="uid://bkytqpo0g6alj" path="res://scenes/ui_elements/player_name_label.tscn" id="2_1uje0"]
 [ext_resource type="PackedScene" uid="uid://n8sfd1o626wy" path="res://scenes/ui_elements/binding_selector.tscn" id="3_qy2qo"]
 
-[node name="PlayerInfoContainer" type="VBoxContainer" unique_id=1425029417]
+[node name="PlayerInfoContainer" type="Control" unique_id=2137622260]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
 script = ExtResource("1_m5kwd")
 
-[node name="PlayerNameLabel" parent="." unique_id=1884230857 instance=ExtResource("2_1uje0")]
-layout_mode = 2
+[node name="Panel" type="Panel" parent="." unique_id=1543808574]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="GridContainer" type="VBoxContainer" parent="." unique_id=773546473]
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1198500932]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=773546473]
 layout_mode = 2
 size_flags_stretch_ratio = 1.42
 
-[node name="NameEdit" type="LineEdit" parent="GridContainer" unique_id=750606087]
-layout_mode = 2
-
-[node name="ColorPickerButton" type="ColorPickerButton" parent="GridContainer" unique_id=382401048]
-layout_mode = 2
-text = "color"
-edit_alpha = false
-
-[node name="BindingSelector" parent="GridContainer" unique_id=1286925176 instance=ExtResource("3_qy2qo")]
+[node name="NameEdit" type="LineEdit" parent="Panel/MarginContainer/GridContainer" unique_id=750606087]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/outline_size = 4
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/GridContainer" unique_id=463220589]
+layout_mode = 2
+columns = 2
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Panel/MarginContainer/GridContainer/GridContainer" unique_id=382401048]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "c"
+edit_alpha = false
+
+[node name="BindingSelector" parent="Panel/MarginContainer/GridContainer/GridContainer" unique_id=1286925176 instance=ExtResource("3_qy2qo")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3

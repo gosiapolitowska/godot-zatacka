@@ -7,6 +7,7 @@
 [node name="BindingSelector" type="OptionButton" unique_id=1286925176]
 offset_right = 40.0
 offset_bottom = 20.0
+size_flags_horizontal = 4
 item_count = 2
 popup/item_0/icon = ExtResource("1_dlgcv")
 popup/item_0/id = 0

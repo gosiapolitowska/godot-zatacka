@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d00ws7wljnit4" path="res://assets/FlatUI4/UIpack_vector.svg" id="1"]
 [ext_resource type="FontFile" uid="uid://fvlxax07n1wd" path="res://assets/FlatUI4/kenvector_future.ttf" id="2"]
-[ext_resource type="FontFile" uid="uid://2gj4slvc4osf" path="res://assets/fonts/LeniaSoftDemo-SemiBold.ttf" id="3_ixbsy"]
+[ext_resource type="FontFile" uid="uid://cetdkssknmsgf" path="res://assets/fonts/DynaPuff-Medium.ttf" id="3_ixbsy"]
 
 [sub_resource type="StyleBoxTexture" id="1"]
 texture = ExtResource("1")
@@ -92,9 +92,10 @@ region_rect = Rect2(840, 316, 192, 6)
 texture = ExtResource("1")
 texture_margin_left = 17.1475
 texture_margin_top = 12.0032
-texture_margin_right = 13.718
+texture_margin_right = 14.0
 texture_margin_bottom = 9.43112
 region_rect = Rect2(629, 317, 194, 49)
+modulate_color = Color(0.23921569, 0.38039216, 0.1764706, 0.36078432)
 
 [sub_resource type="AtlasTexture" id="20"]
 atlas = ExtResource("1")
@@ -229,7 +230,7 @@ Button/colors/font_disabled_color = Color(0.41598096, 0.41598034, 0.41597998, 0.
 Button/colors/font_hover_color = Color(0.34902, 0.34902, 0.34902, 1)
 Button/colors/font_pressed_color = Color(0.388235, 0.388235, 0.388235, 1)
 Button/constants/h_separation = 2
-Button/font_sizes/font_size = 32
+Button/font_sizes/font_size = 28
 Button/styles/disabled = SubResource("1")
 Button/styles/focus = SubResource("2")
 Button/styles/hover = SubResource("3")
@@ -239,7 +240,7 @@ CheckBox/colors/font_color = Color(0, 0, 0, 1)
 CheckBox/colors/font_disabled_color = Color(0.9, 0.9, 0.9, 0.2)
 CheckBox/colors/font_hover_color = Color(0.34902, 0.34902, 0.34902, 1)
 CheckBox/colors/font_hover_color_pressed = Color(0.34902, 0.34902, 0.34902, 1)
-CheckBox/colors/font_pressed_color = Color(0.388235, 0.388235, 0.388235, 1)
+CheckBox/colors/font_pressed_color = Color(0, 0, 0, 1)
 CheckBox/constants/check_v_offset = 0
 CheckBox/constants/h_separation = 4
 CheckBox/icons/checked = SubResource("6")

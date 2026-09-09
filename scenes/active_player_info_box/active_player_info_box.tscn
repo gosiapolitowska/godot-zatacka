@@ -2,17 +2,16 @@
 
 [ext_resource type="Script" uid="uid://xymgrpjd4n0s" path="res://scenes/active_player_info_box/active_player_info_box.gd" id="1_thl36"]
 [ext_resource type="PackedScene" uid="uid://bkytqpo0g6alj" path="res://scenes/ui_elements/player_name_label.tscn" id="2_1g3ag"]
+[ext_resource type="PackedScene" uid="uid://c8rmvdjqlywev" path="res://scenes/ui_elements/point_indicator.tscn" id="2_xsy16"]
 
 [node name="ActivePlayerInfoBox" type="Control" unique_id=404675153]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 script = ExtResource("1_thl36")
 
 [node name="Container" type="HBoxContainer" parent="." unique_id=2103760643]
@@ -22,15 +21,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 2
 
-[node name="NameLabel" parent="Container" unique_id=1884230857 instance=ExtResource("2_1g3ag")]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ActionsRect" type="TextureRect" parent="Container" unique_id=679719469]
+[node name="PointIndicator" parent="Container" unique_id=1043757336 instance=ExtResource("2_xsy16")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container" unique_id=1249323188]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameLabel" parent="Container/VBoxContainer" unique_id=1884230857 instance=ExtResource("2_1g3ag")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+clip_text = true
+text_overrun_behavior = 5
+
+[node name="ActionsRect" type="TextureRect" parent="Container/VBoxContainer" unique_id=679719469]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
