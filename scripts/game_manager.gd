@@ -12,6 +12,7 @@ const start_wait_time := 2
 @export var game_controller: GameController
 @export var round_manager: RoundManager
 @export var player_panel: PlayerPanel
+@export var game_end_screen: GameEndEscreen
 
 func _init() -> void:
 	# map of state -> valid from
@@ -30,12 +31,16 @@ func _ready() -> void:
 	round_manager.player_score_updated.connect(_on_score_updated)
 	player_panel.to_config_requested.connect(go_to_config)
 	player_panel.next_round_requested.connect(initiate_round)
+	player_panel.show_ranking_requested.connect(_on_show_ranking)
+	player_panel.new_game_requested.connect(initiate_game)
 
 func initiate_game():
 	debug(" -> init game")
 	if not state_machine.transition_if_valid(GameState.GAME_INITIATED):
 		return
+	game_end_screen.clear_and_hide()
 	round_manager.new_game(player_manager.players, config_manager.round_mode, config_manager.get_config(Enums.ConfigName.ROUND_COUNT).get_value(), config_manager.max_points)
+	player_panel.new_game()
 	initiate_round()
 
 func initiate_round():
@@ -69,6 +74,9 @@ func end_game():
 	debug(" -> end game")
 	if not state_machine.transition_if_valid(GameState.GAME_END):
 		return
+	game_end_screen.set_players(round_manager.current_snapshot())
+	game_end_screen.display()
+	player_panel.game_end()
 
 func go_to_config():
 	debug(" -> config")
@@ -78,7 +86,14 @@ func go_to_config():
 	round_manager.clear()
 	game_controller.clear()
 	player_panel.clear()
+	game_end_screen.clear_and_hide()
 	menu.show_config_menu()
+
+func _on_show_ranking():
+	if state_machine.state != GameState.GAME_END:
+		Log.error("[Game Manager] Can't show ranking when game state is %s" % state_machine.state)
+		return
+	game_end_screen.display()
 
 func _initiate_timer():
 	timer = Timer.new()

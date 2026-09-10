@@ -2,6 +2,8 @@ class_name PanelUi extends Panel
 
 signal next_round_clicked
 signal menu_clicked
+signal ranking_clicked
+signal replay_clicked
 
 const ACTIVE_PLAYER = preload("res://scenes/active_player_info_box/active_player_info_box.tscn")
 const DEAD_PLAYER = preload("res://scenes/dead_player_info_box/dead_player_info_box.tscn")
@@ -10,9 +12,11 @@ const DEAD_PLAYER = preload("res://scenes/dead_player_info_box/dead_player_info_
 @onready var dead_players_container = %DeadPlayerContainer
 @onready var round_label: Label = %RoundLabel
 @onready var round_indicator: PointIndicator = %RoundIndicator
+@onready var ranking_button: Button = %RankingButton
 @onready var next_round_button: Button = %NextRoundButton
 @onready var menu_button: Button = %MenuButton
 @onready var quit_button: Button = %QuitButton
+@onready var replay_button: Button = %ReplayButton
 
 var _max_points: int
 
@@ -20,10 +24,22 @@ func _ready() -> void:
 	next_round_button.pressed.connect(func(): next_round_clicked.emit())
 	menu_button.pressed.connect(func(): menu_clicked.emit())
 	quit_button.pressed.connect(_on_quit_button_pressed)
+	ranking_button.pressed.connect(func(): ranking_clicked.emit())
+	replay_button.pressed.connect(func(): replay_clicked.emit())
+	
+func new_game():
+	ranking_button.hide()
+	replay_button.hide()
+	next_round_button.show()
 
 func new_round(mode: Enums.RoundMode, current_round: int, round_count: int, max_points: int):
 	_update_round_label(mode, current_round, round_count)
 	_max_points = max_points
+
+func game_end():
+	ranking_button.show()
+	replay_button.show()
+	next_round_button.hide()
 
 func clear_players():
 	clear_active_players()

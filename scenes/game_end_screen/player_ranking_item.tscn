@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://oeevyh6mnutx"]
+
+[ext_resource type="Script" uid="uid://bboayer7e6qg6" path="res://scenes/game_end_screen/player_ranking_item.gd" id="1_3v62r"]
+[ext_resource type="StyleBox" uid="uid://tir38k25wlpw" path="res://scenes/game_end_screen/item_style_box.tres" id="2_0jc5l"]
+[ext_resource type="PackedScene" uid="uid://bkytqpo0g6alj" path="res://scenes/ui_elements/player_name_label.tscn" id="2_3v62r"]
+
+[node name="PlayerRankingItem" type="Control" unique_id=1198473830]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_3v62r")
+
+[node name="Ui" type="Panel" parent="." unique_id=37132874]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_0jc5l")
+
+[node name="Control" type="Control" parent="Ui" unique_id=1455290768]
+layout_mode = 1
+anchor_right = 0.25
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="RankingTextureRect" type="TextureRect" parent="Ui/Control" unique_id=1838772569]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.25, 0.25)
+
+[node name="PlaceLabel" type="Label" parent="Ui/Control" unique_id=1458296541]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerNameLabel" parent="Ui" unique_id=1884230857 instance=ExtResource("2_3v62r")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Matcha"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Ui" unique_id=927521150]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_right = 0.6
+anchor_bottom = 1.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "score"
+vertical_alignment = 1
+
+[node name="ScoreLabel" parent="Ui" unique_id=687416040 instance=ExtResource("2_3v62r")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_right = 0.6
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_right = 0.0
+offset_bottom = 0.0
+text = "11"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Ui" unique_id=1864839909]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_right = 0.85
+anchor_bottom = 1.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "max lived"
+vertical_alignment = 1
+
+[node name="MaxLivedLabel" parent="Ui" unique_id=35169677 instance=ExtResource("2_3v62r")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_right = 0.85
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_right = 0.0
+offset_bottom = 0.0
+text = "01:01"
+vertical_alignment = 1

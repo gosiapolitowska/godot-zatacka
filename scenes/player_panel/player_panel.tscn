@@ -85,6 +85,16 @@ size_flags_vertical = 3
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=1563370095]
 layout_mode = 2
 
+[node name="RankingButton" type="Button" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=1659288654]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Show Ranking"
+
+[node name="ReplayButton" type="Button" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=407685919]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play Again"
+
 [node name="NextRoundButton" type="Button" parent="MarginContainer2/Panel/MarginContainer/Container" unique_id=71795261]
 unique_name_in_owner = true
 layout_mode = 2

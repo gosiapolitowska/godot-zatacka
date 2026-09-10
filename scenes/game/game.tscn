@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bjulgp5ngruk0" path="res://scenes/player_panel/player_panel.tscn" id="4_lfrn8"]
 [ext_resource type="Script" uid="uid://bnbiywnpnw5la" path="res://scripts/round_manager.gd" id="5_2a8rs"]
 [ext_resource type="Script" uid="uid://beq4gkskvoo42" path="res://debug/debug.gd" id="10_4j704"]
+[ext_resource type="PackedScene" uid="uid://blte6wqiysrh3" path="res://scenes/game_end_screen/game_end_screen.tscn" id="11_kp23o"]
 
 [node name="Game" type="Node" unique_id=1475631694 node_paths=PackedStringArray("game_manager")]
 script = ExtResource("1_0sr1o")
@@ -28,7 +29,7 @@ unique_name_in_owner = true
 script = ExtResource("2_5i0tg")
 metadata/_custom_type_script = "uid://c2kre7yu414jt"
 
-[node name="GameManager" type="Node" parent="Managers" unique_id=411008009 node_paths=PackedStringArray("player_manager", "menu", "config_manager", "game_controller", "round_manager", "player_panel")]
+[node name="GameManager" type="Node" parent="Managers" unique_id=411008009 node_paths=PackedStringArray("player_manager", "menu", "config_manager", "game_controller", "round_manager", "player_panel", "game_end_screen")]
 unique_name_in_owner = true
 script = ExtResource("3_bdhmt")
 player_manager = NodePath("../PlayerManager")
@@ -37,6 +38,7 @@ config_manager = NodePath("../ConfigManager")
 game_controller = NodePath("../../GameArea/GameController")
 round_manager = NodePath("../RoundManager")
 player_panel = NodePath("../../GameArea/PlayerPanel")
+game_end_screen = NodePath("../../GameEndScreen")
 metadata/_custom_type_script = "uid://btej5q8psqc26"
 
 [node name="PlayerManager" type="Node" parent="Managers" unique_id=883312227 node_paths=PackedStringArray("config_manager")]
@@ -104,3 +106,6 @@ offset_left = 0.6398926
 [node name="Menu" parent="." unique_id=855249113 node_paths=PackedStringArray("config_manager", "player_manager") instance=ExtResource("2_kelw5")]
 config_manager = NodePath("../Managers/ConfigManager")
 player_manager = NodePath("../Managers/PlayerManager")
+
+[node name="GameEndScreen" parent="." unique_id=560752914 node_paths=PackedStringArray("config_manager") instance=ExtResource("11_kp23o")]
+config_manager = NodePath("../Managers/ConfigManager")

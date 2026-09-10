@@ -47,8 +47,8 @@ func initialize(\
 	
 	_update_round_mode(round_mode)
 	round_mode_button.pressed.connect(_toggle_round_mode)
-	points_spin.value = max_poins
-	points_spin.changed.connect(func(value): points_changed.emit(value))
+	points_spin.set_value_no_signal(max_poins)
+	points_spin.value_changed.connect(func(value): points_changed.emit(value))
 
 func _toggle_round_mode():
 	var new_mode: Enums.RoundMode

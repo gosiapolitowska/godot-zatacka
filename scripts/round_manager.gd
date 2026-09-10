@@ -15,6 +15,7 @@ var _round_mode: Enums.RoundMode
 var _max_points: int
 
 func new_game(players: Array[PlayerInfo], mode: Enums.RoundMode, round_count: int, max_points: int):
+	clear()
 	self.round_count = round_count
 	_player_count = players.size()
 	_active_players = players.size()

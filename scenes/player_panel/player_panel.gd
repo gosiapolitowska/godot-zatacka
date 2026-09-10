@@ -2,12 +2,22 @@ class_name PlayerPanel extends Control
 
 signal to_config_requested
 signal next_round_requested
+signal show_ranking_requested
+signal new_game_requested
 
 @export var ui: PanelUi
 
 func _ready() -> void:
 	ui.menu_clicked.connect(func(): to_config_requested.emit())
 	ui.next_round_clicked.connect(func(): next_round_requested.emit())
+	ui.ranking_clicked.connect(func(): show_ranking_requested.emit())
+	ui.replay_clicked.connect(func(): new_game_requested.emit())
+
+func new_game():
+	ui.new_game()
+
+func game_end():
+	ui.game_end()
 
 func new_round(players: Array[Player], mode: Enums.RoundMode, current_round: int, round_count: int, max_points: int):
 	ui.clear_players()

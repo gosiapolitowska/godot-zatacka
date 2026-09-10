@@ -13,7 +13,7 @@ var action_bindings: Array[Array] = []
 var round_mode := Enums.RoundMode.FIXED_ROUNDS
 var max_points := 20
 
-var default_colors = [
+var default_colors: Array[Color] = [
 	Color(0.949, 0.451, 0.831, 1.0),
 	Color(0.0, 0.724, 0.896, 1.0),
 	Color(1.0, 1.0, 0.11, 1.0),
@@ -22,9 +22,9 @@ var default_colors = [
 	Color(1.0, 0.329, 0.401, 1.0)
 ]
 
-var default_names = ["Matcha", "Onigiri", "Sakura", "Torii", "Mochi", "Matsuri"]
+var default_names: Array[String] = ["Matcha", "Onigiri", "Sakura", "Torii", "Mochi", "Matsuri"]
 
-var nth = {
+var nth: Dictionary[int, String] = {
 	1: "1st",
 	2: "2nd",
 	3: "3rd",

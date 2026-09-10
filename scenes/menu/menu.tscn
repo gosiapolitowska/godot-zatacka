@@ -43,6 +43,7 @@ layer = 10
 
 [node name="Ui" type="Control" parent="CanvasLayer" unique_id=2059567127]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -194,7 +195,9 @@ unique_name_in_owner = true
 layout_mode = 2
 min_value = 1.0
 value = 1.0
+rounded = true
 allow_greater = true
+update_on_text_changed = true
 
 [node name="FixedRoundsContainer" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/HBoxContainer/RoundConfigContainer" unique_id=1903113331 instance=ExtResource("7_3y2rt")]
 unique_name_in_owner = true

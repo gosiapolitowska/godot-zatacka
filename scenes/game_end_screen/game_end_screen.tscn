@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://blte6wqiysrh3"]
+
+[ext_resource type="Script" uid="uid://df7ifb6lu0lh7" path="res://scenes/game_end_screen/game_end_screen.gd" id="1_5ciuf"]
+[ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://assets/FlatUI4/kenneyUI-green.tres" id="1_cnc5p"]
+[ext_resource type="PackedScene" uid="uid://g3r6imgi14pq" path="res://scenes/ui_elements/label_title.tscn" id="2_vpfd5"]
+[ext_resource type="Script" uid="uid://cyarf7gj3tqim" path="res://scenes/game_end_screen/game_end_ui.gd" id="3_t0g4u"]
+
+[node name="GameEndScreen" type="Node" unique_id=560752914 node_paths=PackedStringArray("ui")]
+script = ExtResource("1_5ciuf")
+ui = NodePath("CanvasLayer/GameEndUi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=884260559]
+layer = 5
+
+[node name="GameEndUi" type="Control" parent="CanvasLayer" unique_id=1890754476]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cnc5p")
+script = ExtResource("3_t0g4u")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GameEndUi" unique_id=636654600]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="Panel" type="Panel" parent="CanvasLayer/GameEndUi" unique_id=1923856260]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/GameEndUi/Panel" unique_id=1285648197]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GameEndUi/Panel/MarginContainer" unique_id=736244565]
+layout_mode = 2
+
+[node name="LabelTitle" parent="CanvasLayer/GameEndUi/Panel/MarginContainer/VBoxContainer" unique_id=51299978 instance=ExtResource("2_vpfd5")]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Ranking"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/GameEndUi/Panel/MarginContainer/VBoxContainer" unique_id=1175529160]
+layout_mode = 2
+
+[node name="RankingContainer" type="VBoxContainer" parent="CanvasLayer/GameEndUi/Panel/MarginContainer/VBoxContainer" unique_id=866684595]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/GameEndUi/Panel/MarginContainer/VBoxContainer" unique_id=1767148314]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/GameEndUi/Panel/MarginContainer/VBoxContainer" unique_id=545223941]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Ok"

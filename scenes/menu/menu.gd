@@ -34,7 +34,9 @@ func _add_config_option(name: Enums.ConfigName):
 	ui.add_config_option(config_manager.get_config(name), on_value_changed)
 
 func _on_points_changed(value: int):
+	Log.debug("[Menu] trying to update max points to %s" % value)
 	if value >= 0:
+		Log.debug("[Menu] updating max points to %s" % value)
 		config_manager.max_points = value
 
 func _on_round_mode_changed(mode: Enums.RoundMode):
