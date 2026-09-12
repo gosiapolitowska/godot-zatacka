@@ -11,6 +11,14 @@ This is my remake of a classic Zatacka game, which itself is a remake of [Achtun
 * Whenever a player crashes, all remaining players get a point each
 * The game ends once any player reaches a certain amount of points, or maximum number of rounds is reached
 
+## Screenshots
+
+![Config screen](screenshots/config.png)
+
+![Gameplay 1](screenshots/gameplay1.png)
+
+![Gameplay 2](screenshots/gameplay2.png)
+
 ## Implementation
 
 Implementation done using [Godot](https://godotengine.org) game engine.
