@@ -7,4 +7,4 @@ func seconds_to_string(time_in_sec: int):
 	var minutes: int = time_in_sec / 60
 
 	#returns a string with the format "HH:MM:SS"
-	return "%02d:%02d" % [minutes, seconds - (60 * minutes)]
+	return "%02d:%02d" % [minutes, seconds]
