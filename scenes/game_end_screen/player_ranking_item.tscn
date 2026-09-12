@@ -71,6 +71,8 @@ theme_override_font_sizes/font_size = 36
 text = "Matcha"
 horizontal_alignment = 1
 vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 5
 
 [node name="Label" type="Label" parent="Ui" unique_id=927521150]
 layout_mode = 1

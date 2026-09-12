@@ -16,9 +16,11 @@ func _ready() -> void:
 		config_manager.max_points\
 	)
 	ui.start_game_pressed.connect(_on_start_button_pressed)
-	ui.player_count_selected.connect(_on_player_count_selected)
 	ui.points_changed.connect(_on_points_changed)
 	ui.round_mode_changed.connect(_on_round_mode_changed)
+	ui.add_player_clicked.connect(_on_add_player)
+	ui.remove_player_clicked.connect(_on_remove_player)
+	ui.player_updated.connect(_on_player_updated)
 	_add_config_option(Enums.ConfigName.SPEED)
 	_add_config_option(Enums.ConfigName.ROTATION_SPEED)
 	_add_config_option(Enums.ConfigName.PLAYER_SIZE)
@@ -32,6 +34,19 @@ func show_config_menu():
 func _add_config_option(name: Enums.ConfigName):
 	var on_value_changed: Callable = func(value): config_manager.update_config(name, value)
 	ui.add_config_option(config_manager.get_config(name), on_value_changed)
+
+func _on_add_player():
+	var player = player_manager.add_player()
+	if player:
+		ui.add_player(player)
+
+func _on_player_updated(player: PlayerInfo):
+	player_manager.update_player(player)
+
+func _on_remove_player(id: int):
+	Log.debug("[Menu] trying to remove player %s" % [id])
+	if player_manager.remove_player(id):
+		ui.remove_player(id)
 
 func _on_points_changed(value: int):
 	Log.debug("[Menu] trying to update max points to %s" % value)
@@ -47,8 +62,7 @@ func _on_player_count_selected(count: int):
 	ui.update(player_manager.recreate_players())
 
 func _on_start_button_pressed() -> void:
-	var new_players: Array[PlayerInfo] = ui.get_edited_players()
-	var errors := player_manager.update_if_valid(new_players)
+	var errors := player_manager.validate()
 	if errors.is_empty():
 		ui.hide()
 		start_game_requested.emit()

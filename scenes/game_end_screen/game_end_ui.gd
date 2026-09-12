@@ -3,8 +3,6 @@ class_name GameEndUi extends Control
 const RANKING_ITEM = preload("res://scenes/game_end_screen/player_ranking_item.tscn")
 
 @onready var ranking_container = %RankingContainer
-@onready var replay_button: Button = %ReplayButton
-@onready var menu_button: Button = %MenuButton
 @onready var ok_button: Button = %CloseButton
 
 func _ready() -> void:

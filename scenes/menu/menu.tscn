@@ -7,8 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://cye05ie8d48le" path="res://scenes/alert/alert.tscn" id="3_ibotj"]
 [ext_resource type="PackedScene" uid="uid://psrai5eo0sde" path="res://scenes/ui_elements/label_big.tscn" id="4_pfayw"]
 [ext_resource type="PackedScene" uid="uid://bkuf3adgdyc7e" path="res://scenes/ui_elements/config_option.tscn" id="7_3y2rt"]
+[ext_resource type="PackedScene" uid="uid://bca3x64ssoma2" path="res://scenes/ui_elements/dashed_panel.tscn" id="7_f2fum"]
+[ext_resource type="Texture2D" uid="uid://bwn4vke8q06rt" path="res://assets/icons/icon-add-player.tres" id="7_k48pe"]
 [ext_resource type="Texture2D" uid="uid://d00ws7wljnit4" path="res://assets/FlatUI4/UIpack_vector.svg" id="7_qo0fc"]
 [ext_resource type="Texture2D" uid="uid://bveeo7csqykgw" path="res://assets/icons/toggle_icon.tres" id="8_k48pe"]
+[ext_resource type="PackedScene" uid="uid://d0emqy6buhi1c" path="res://scenes/ui_elements/icon_button.tscn" id="8_kaijy"]
+[ext_resource type="Texture2D" uid="uid://b5ybtn0m77vuh" path="res://assets/icons/icon-add-bot.tres" id="10_y4i35"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f2fum"]
 texture = ExtResource("7_qo0fc")
@@ -43,7 +47,6 @@ layer = 10
 
 [node name="Ui" type="Control" parent="CanvasLayer" unique_id=2059567127]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,17 +95,6 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PlayerCount" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=872300462 instance=ExtResource("4_pfayw")]
-layout_mode = 2
-text = "Number of players"
-
-[node name="PlayerCountPanel" type="HBoxContainer" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=1658168590]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=1551461981]
-layout_mode = 2
-
 [node name="PlayerConfig" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=1911578385 instance=ExtResource("4_pfayw")]
 layout_mode = 2
 text = "Player configuration"
@@ -110,8 +102,69 @@ text = "Player configuration"
 [node name="PlayerConfigGrid" type="GridContainer" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=709759843]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
+
+[node name="AddPlayerContainer" type="VBoxContainer" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/PlayerConfigGrid" unique_id=1169309950]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DashedPanel" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/PlayerConfigGrid/AddPlayerContainer" unique_id=1 instance=ExtResource("7_f2fum")]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 3
+dash_length = 10.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/PlayerConfigGrid/AddPlayerContainer/DashedPanel" unique_id=1730411816]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AddPlayerButton" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/PlayerConfigGrid/AddPlayerContainer/DashedPanel/MarginContainer" unique_id=1121980264 instance=ExtResource("8_kaijy")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+size_flags_horizontal = 1
+theme_override_colors/icon_normal_color = Color(1, 0.90588236, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.7764706, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.7764706, 0, 1)
+theme_override_constants/icon_max_width = 50
+text = "player"
+icon = ExtResource("7_k48pe")
+alignment = 0
+icon_alignment = 0
+
+[node name="DashedPanel2" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/PlayerConfigGrid/AddPlayerContainer" unique_id=703420679 instance=ExtResource("7_f2fum")]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 3
+dash_length = 10.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/PlayerConfigGrid/AddPlayerContainer/DashedPanel2" unique_id=2139905708]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AddBotButton" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/PlayerConfigGrid/AddPlayerContainer/DashedPanel2/MarginContainer" unique_id=685678758 instance=ExtResource("8_kaijy")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+size_flags_horizontal = 1
+theme_override_colors/icon_normal_color = Color(1, 0.90588236, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.7764706, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.7764706, 0, 1)
+theme_override_constants/icon_max_width = 50
+text = "bot"
+icon = ExtResource("10_y4i35")
+alignment = 0
+icon_alignment = 0
 
 [node name="HSeparator" type="HSeparator" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=1002972043]
 layout_mode = 2
@@ -120,38 +173,30 @@ layout_mode = 2
 layout_mode = 2
 text = "Game Configuration"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=1968674395]
+[node name="HBoxContainer" type="GridContainer" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer" unique_id=410815994]
 layout_mode = 2
+size_flags_vertical = 3
+columns = 2
 
 [node name="OptionContainer" type="VBoxContainer" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/HBoxContainer" unique_id=484840132]
 unique_name_in_owner = true
 layout_mode = 2
-
-[node name="VSeparator" type="VSeparator" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/HBoxContainer" unique_id=1240560277]
-layout_mode = 2
+size_flags_horizontal = 2
 
 [node name="RoundConfigContainer" type="VBoxContainer" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/HBoxContainer" unique_id=242920515]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/HBoxContainer/RoundConfigContainer" unique_id=482324240]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
 
-[node name="RoundModeToggleButton" type="Button" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/HBoxContainer/RoundConfigContainer/HBoxContainer" unique_id=690402993]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 45)
+[node name="Label2" type="Label" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/HBoxContainer/RoundConfigContainer/HBoxContainer" unique_id=134130266]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0.3882353, 0.3882353, 0.3882353, 1)
-theme_override_colors/icon_hover_color = Color(0.3882353, 0.3882353, 0.3882353, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.3882353, 0.3882353, 0.3882353, 1)
-theme_override_colors/icon_disabled_color = Color(0.3882353, 0.3882353, 0.3882353, 0.5372549)
-theme_override_styles/normal = SubResource("StyleBoxTexture_f2fum")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_qo0fc")
-theme_override_styles/hover = SubResource("StyleBoxTexture_k48pe")
-icon = ExtResource("8_k48pe")
-icon_alignment = 1
-expand_icon = true
+text = "Mode"
 
 [node name="FixedRoundsLabel" type="Label" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/HBoxContainer/RoundConfigContainer/HBoxContainer" unique_id=277732455]
 unique_name_in_owner = true
@@ -174,16 +219,27 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Fixed points"
 
-[node name="FixedPointsCheck" type="CheckBox" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/HBoxContainer/RoundConfigContainer/HBoxContainer" unique_id=845207190]
+[node name="RoundModeToggleButton" type="Button" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/HBoxContainer/RoundConfigContainer/HBoxContainer" unique_id=690402993]
 unique_name_in_owner = true
-visible = false
+custom_minimum_size = Vector2(80, 45)
 layout_mode = 2
-size_flags_vertical = 0
-text = "Fixed points"
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.3882353, 0.3882353, 0.3882353, 1)
+theme_override_colors/icon_hover_color = Color(0.3882353, 0.3882353, 0.3882353, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.3882353, 0.3882353, 0.3882353, 1)
+theme_override_colors/icon_disabled_color = Color(0.3882353, 0.3882353, 0.3882353, 0.5372549)
+theme_override_styles/normal = SubResource("StyleBoxTexture_f2fum")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qo0fc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k48pe")
+icon = ExtResource("8_k48pe")
+icon_alignment = 1
+expand_icon = true
 
 [node name="FixedPointsContainer" type="HBoxContainer" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/HBoxContainer/RoundConfigContainer" unique_id=11324862]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/HBoxContainer/RoundConfigContainer/FixedPointsContainer" unique_id=467875473]
 custom_minimum_size = Vector2(200, 0)
@@ -202,6 +258,8 @@ update_on_text_changed = true
 [node name="FixedRoundsContainer" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer/OptionsContainer/HBoxContainer/RoundConfigContainer" unique_id=1903113331 instance=ExtResource("7_3y2rt")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
 
 [node name="HSeparator2" type="HSeparator" parent="CanvasLayer/Ui/MarginContainer/Panel/MarginContainer/MainContainer" unique_id=738713131]
 layout_mode = 2

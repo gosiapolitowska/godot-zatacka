@@ -1,7 +1,7 @@
 class_name ConfigManager extends Node
 
 var _config: Dictionary[Enums.ConfigName, ConfigValue] = {
-	Enums.ConfigName.PLAYER_COUNT: IntConfigValue.new("Player count", 1, 6, 4),
+	Enums.ConfigName.PLAYER_COUNT: IntConfigValue.new("Player count", 2, 6, 4),
 	Enums.ConfigName.ROUND_COUNT: IntConfigValue.new("Round count", 1, 11, 4),
 	Enums.ConfigName.SPEED: IntConfigValue.new("Speed", 100, 700, 300, 100),
 	Enums.ConfigName.PLAYER_SIZE: IntConfigValue.new("Player size", 4, 64, 16, 4),
@@ -43,6 +43,11 @@ func _init() -> void:
 func get_config(name: Enums.ConfigName) -> ConfigValue:
 	return _config.get(name)
 
-func update_config(name: Enums.ConfigName, value: Variant):
+func update_config(name: Enums.ConfigName, value: Variant) -> ConfigValue:
 	Log.debug("[ConfigManager] setting value %s: %s" % [name, value])
-	get_config(name).set_value(value)
+	var c = get_config(name)
+	if value < c.get_min_value() or value > c.get_max_value():
+		Log.error("[ConfigManager] invalid value %s for config %s" % [value, c])
+	else:
+		c.set_value(value)
+	return c

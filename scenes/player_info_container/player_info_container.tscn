@@ -1,7 +1,22 @@
 [gd_scene format=3 uid="uid://b1fv78ipd0sro"]
 
 [ext_resource type="Script" uid="uid://cjbleqisuefx0" path="res://scenes/player_info_container/player_info_container.gd" id="1_m5kwd"]
+[ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://assets/FlatUI4/kenneyUI-green.tres" id="1_nb3ac"]
+[ext_resource type="Texture2D" uid="uid://cbar3i7v5o0tm" path="res://assets/icons/icon-delete-player.tres" id="2_qy2qo"]
+[ext_resource type="PackedScene" uid="uid://d0emqy6buhi1c" path="res://scenes/ui_elements/icon_button.tscn" id="3_nb3ac"]
 [ext_resource type="PackedScene" uid="uid://n8sfd1o626wy" path="res://scenes/ui_elements/binding_selector.tscn" id="3_qy2qo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmdpk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="PlayerInfoContainer" type="Control" unique_id=2137622260]
 custom_minimum_size = Vector2(250, 200)
@@ -11,6 +26,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 3
+theme = ExtResource("1_nb3ac")
 script = ExtResource("1_m5kwd")
 
 [node name="Panel" type="Panel" parent="." unique_id=1543808574]
@@ -20,6 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fmdpk")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1198500932]
 layout_mode = 1
@@ -32,6 +50,7 @@ grow_vertical = 2
 [node name="GridContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=773546473]
 layout_mode = 2
 size_flags_stretch_ratio = 1.42
+theme_override_constants/separation = 20
 
 [node name="NameEdit" type="LineEdit" parent="Panel/MarginContainer/GridContainer" unique_id=750606087]
 unique_name_in_owner = true
@@ -42,6 +61,7 @@ emoji_menu_enabled = false
 
 [node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/GridContainer" unique_id=463220589]
 layout_mode = 2
+size_flags_vertical = 3
 columns = 2
 
 [node name="ColorPickerButton" type="ColorPickerButton" parent="Panel/MarginContainer/GridContainer/GridContainer" unique_id=382401048]
@@ -55,3 +75,12 @@ edit_alpha = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="RemovePlayerButton" parent="Panel/MarginContainer/GridContainer" unique_id=1848267081 instance=ExtResource("3_nb3ac")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 55)
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(1, 0.33333334, 0.10980392, 1)
+theme_override_colors/icon_pressed_color = Color(0.84705883, 0.24705882, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.84705883, 0.24705882, 0, 1)
+icon = ExtResource("2_qy2qo")
