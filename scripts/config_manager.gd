@@ -5,7 +5,7 @@ var _config: Dictionary[Enums.ConfigName, ConfigValue] = {
 	Enums.ConfigName.ROUND_COUNT: IntConfigValue.new("Round count", 1, 11, 4),
 	Enums.ConfigName.SPEED: IntConfigValue.new("Speed", 100, 700, 300, 100),
 	Enums.ConfigName.PLAYER_SIZE: IntConfigValue.new("Player size", 4, 64, 16, 4),
-	Enums.ConfigName.ROTATION_SPEED: FloatConfigValue.new("Rotation Speed", 1.5, 10.0, 7.7, 0.1)
+	Enums.ConfigName.ROTATION_RADIUS: IntConfigValue.new("Rotation Radius", 10, 100, 50, 10)
 }
 
 var line_width: int = get_config(Enums.ConfigName.PLAYER_SIZE).get_min_value()

@@ -14,7 +14,7 @@ func clear():
 	play_area.clear()
 
 func initiate():
-	var dot_config = DotConfig.new(_config_value(Enums.ConfigName.SPEED), _config_value(Enums.ConfigName.ROTATION_SPEED), _config_value(Enums.ConfigName.PLAYER_SIZE))
+	var dot_config = DotConfig.new(_config_value(Enums.ConfigName.SPEED), _config_value(Enums.ConfigName.ROTATION_RADIUS), _config_value(Enums.ConfigName.PLAYER_SIZE))
 	play_area.clear()
 	play_area.initiate(player_manager.players, dot_config)
 

@@ -8,7 +8,7 @@ signal moved(from: Vector2, to: Vector2, player: PlayerInfo)
 @onready var circle = $DotCircle
 
 var _speed: int
-var _rotation_speed: float
+var _rotation_radius: int
 var _player_size: int
 var _player_info: PlayerInfo
 
@@ -17,7 +17,7 @@ var _moving = false
 
 func with_values(dot_config: DotConfig, player_info: PlayerInfo) -> Dot:
 	_speed = dot_config.speed
-	_rotation_speed = dot_config.rotation_speed
+	_rotation_radius = dot_config.rotation_radius
 	_player_size = dot_config.player_size
 	_player_info = player_info
 	return self
@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 	if not _moving:
 		return
 	_rotation_direction = Input.get_axis(_player_info.actions[0], _player_info.actions[1])
-	rotation += _rotation_direction * _rotation_speed * delta
+	rotation += _rotation_direction * (_speed / _rotation_radius) * delta
 	
 	var velocity = Vector2.RIGHT * _speed * delta
 	var old_position = position

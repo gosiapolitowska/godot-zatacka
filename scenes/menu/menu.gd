@@ -22,7 +22,7 @@ func _ready() -> void:
 	ui.remove_player_clicked.connect(_on_remove_player)
 	ui.player_updated.connect(_on_player_updated)
 	_add_config_option(Enums.ConfigName.SPEED)
-	_add_config_option(Enums.ConfigName.ROTATION_SPEED)
+	_add_config_option(Enums.ConfigName.ROTATION_RADIUS)
 	_add_config_option(Enums.ConfigName.PLAYER_SIZE)
 	var callback = func(value): config_manager.update_config(Enums.ConfigName.ROUND_COUNT, value)
 	ui.configure_round_option(config_manager.get_config(Enums.ConfigName.ROUND_COUNT), callback)
