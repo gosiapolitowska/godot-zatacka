@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b5cj64ewmva1y"]
+
+[ext_resource type="Script" uid="uid://7yektbr0ry2n" path="res://scenes/ui_elements/info.gd" id="1_plg70"]
+[ext_resource type="Texture2D" uid="uid://dqb0jjwjkcvc0" path="res://assets/icons/info-02.svg" id="2_b38ny"]
+
+[node name="Info" type="Control" unique_id=1572575257]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_plg70")
+
+[node name="InfoIcon" type="TextureRect" parent="." unique_id=531758104]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(25, 25)
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_b38ny")
+
+[node name="InfoControl" type="Control" parent="." unique_id=764340620]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(400, 50)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="InfoControl" unique_id=1971452208]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="InfoControl/Panel" unique_id=546665205]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InfoLabel" type="Label" parent="InfoControl/Panel/MarginContainer" unique_id=1781694311]
+unique_name_in_owner = true
+layout_mode = 2
+text = "some info"
+vertical_alignment = 1

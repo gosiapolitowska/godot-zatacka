@@ -1,11 +1,12 @@
 class_name IntConfigValue extends ConfigValue
 
-func _init(name: String, min_value: int, max_value: int, value: int, step: int = 1) -> void:
+func _init(name: String, min_value: int, max_value: int, value: int, step: int = 1, info: String = "") -> void:
 	_name = name
 	_value = value
 	_max_value = max_value
 	_min_value = min_value
 	_step = step
+	_info = info
 
 func set_value(value: Variant):
 	if value is not int:

@@ -33,7 +33,7 @@ func player_died(id: int):
 	
 	_active_players -= 1
 	var now_msec := Time.get_ticks_msec()
-	player.kill((now_msec - _round_start_time) / 1000)
+	player.kill(now_msec - _round_start_time)
 	
 	for p: Player in _players.values():
 		if p.alive:

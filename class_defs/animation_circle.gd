@@ -1,4 +1,4 @@
-extends Sprite2D
+class_name AnimationCircle extends Sprite2D
 
 @export var color: Color = Color.CHARTREUSE:
 	set(value):
@@ -11,4 +11,4 @@ extends Sprite2D
 		queue_redraw()
 
 func _draw() -> void:
-	draw_circle(Vector2.ZERO, size / 2, color, true, -1.0, true)
+	draw_circle(Vector2.ZERO, size / 2, color, false, 3.0, true)

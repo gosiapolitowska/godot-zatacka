@@ -17,4 +17,4 @@ func _ready() -> void:
 	indicator.update_points(_player.score)
 	name_label.text = _player.info.name
 	name_label.color = _player.info.color
-	lived_label.text = Globals.seconds_to_string(_player.sec_lived)
+	lived_label.text = Globals.millis_to_string(_player.msec_lived)

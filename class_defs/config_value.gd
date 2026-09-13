@@ -6,6 +6,7 @@ var _value: Variant
 var _max_value: Variant
 var _min_value: Variant
 var _step: Variant
+var _info: String
 
 func get_name() -> String:
 	return _name
@@ -24,6 +25,9 @@ func get_min_value() -> Variant:
 
 func get_step() -> Variant:
 	return _step
+
+func get_info() -> String:
+	return _info
 
 func _to_string() -> String:
 	return "ConfigValue { %s, [%s, %s], %s, step: %s }" % [_name, _min_value, _max_value, _value, _step]

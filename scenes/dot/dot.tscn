@@ -11,10 +11,12 @@ radius = 4.0
 script = ExtResource("1_syhbm")
 metadata/_edit_group_ = true
 
-[node name="DotCircle" type="Node2D" parent="." unique_id=243201838]
+[node name="DotCircle" type="Sprite2D" parent="." unique_id=1112250781]
+unique_name_in_owner = true
 script = ExtResource("1_swi4y")
 
 [node name="DotCollision" type="CollisionShape2D" parent="." unique_id=289175896]
+unique_name_in_owner = true
 shape = SubResource("CircleShape2D_hyovx")
 debug_color = Color(0, 0.6, 0.69803923, 0.8745098)
 script = ExtResource("2_o7bw8")

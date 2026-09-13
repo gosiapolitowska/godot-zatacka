@@ -23,19 +23,21 @@ This is my remake of a classic Zatacka game, which itself is a remake of [Achtun
 
 * [x] basic game mechanics
 * [x] basic ui
-* [x] points (every time a player crashes, all active players get point each)
+* [x] points (every time a player crashes, all active players get point each): calculation, display
 * [x] player settings (player count, name, color, key binding)
 * [x] game settings (speed in px/sec, rotation radius in px, player dot size in px)
 * [x] mode: fixed roud count / fixed point count
 * [x] ranking screen at the end of game
-* [ ] start round coundow
-* [ ] animations
+* [ ] \[mechanics\] more random player spawn position
+* [ ] \[UI\] player starting rotation indicator
+* [ ] \[UI\] start round coundow
+* [ ] \[UI\] animations
   * [ ] player position at round start
   * [ ] player crashed
   * [ ] point gained
-* [ ] next round start mode: manual (pressing "next round" button) / automatic (with configurable delay in sec)
-* [ ] bots
-* [ ] sound
+* [ ] \[mechanics\] next round start mode: manual (pressing "next round" button) / automatic (with configurable delay in sec)
+* [ ] \[AI\] bots
+* [ ] \[sound\] sound
   * [ ] music
   * [ ] effects (start game, crash, end round, etc)
 

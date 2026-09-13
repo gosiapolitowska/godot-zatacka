@@ -9,19 +9,17 @@ _data = {
 }
 point_count = 9
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmdpk"]
-size = Vector2(40, 1040)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyovx"]
-size = Vector2(1656, 40)
-
 [node name="GameController" type="Control" unique_id=374257912 node_paths=PackedStringArray("play_area")]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_420aq")
 play_area = NodePath("PlayArea")
 
-[node name="PlayArea" type="Area2D" parent="." unique_id=1922575906]
+[node name="PlayArea" type="StaticBody2D" parent="." unique_id=1543370380]
 script = ExtResource("2_c3f1a")
 
 [node name="Path2D" type="Path2D" parent="PlayArea" unique_id=1305253354]
@@ -32,19 +30,3 @@ curve = SubResource("Curve2D_eow3j")
 unique_name_in_owner = true
 position = Vector2(205, 445)
 rotation = -1.2181505
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea" unique_id=1644905745]
-position = Vector2(-20, 520)
-shape = SubResource("RectangleShape2D_fmdpk")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="PlayArea" unique_id=915938181]
-position = Vector2(1600, 520)
-shape = SubResource("RectangleShape2D_fmdpk")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayArea" unique_id=1434405536]
-position = Vector2(788, -20)
-shape = SubResource("RectangleShape2D_hyovx")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="PlayArea" unique_id=1256494021]
-position = Vector2(788, 1060)
-shape = SubResource("RectangleShape2D_hyovx")

@@ -3,6 +3,7 @@ class_name ConfigOption extends Control
 @onready var label = %Label as Label
 @onready var value_label = %ValueLabel as Label
 @onready var slider = %Slider as Slider
+@onready var info: Info = %Info
 
 var _config: ConfigValue
 var _on_value_changed: Callable
@@ -28,10 +29,13 @@ func _update():
 	value_label.text = str(_value(_config.get_value()))
 	slider.max_value = _config.get_max_value()
 	slider.min_value = _config.get_min_value()
-	
 	slider.value = _config.get_value()
 	slider.step = _config.get_step()
 	slider.value_changed.connect(_on_value_changed_internal)
+	
+	if not _config.get_info().is_empty():
+		info.show()
+		info.txt = _config.get_info()
 
 func _on_value_changed_internal(value):
 	value_label.text = str(_value(value))

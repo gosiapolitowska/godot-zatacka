@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://4x50mqi5mtny"]
+
+[ext_resource type="Script" uid="uid://dx133c10m0q6q" path="res://scenes/dot/dotto.gd" id="1_m5j7n"]
+[ext_resource type="Script" uid="uid://cst8kkxnelf3n" path="res://scenes/dot/dot_circle.gd" id="2_412i4"]
+[ext_resource type="Script" uid="uid://dt35fo6tdftmm" path="res://scenes/dot/dot_collision.gd" id="3_sb6l6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fmdpk"]
+
+[node name="Dotto" type="CharacterBody2D" unique_id=1084272308]
+script = ExtResource("1_m5j7n")
+
+[node name="DotCircle" type="Sprite2D" parent="." unique_id=980023740]
+unique_name_in_owner = true
+script = ExtResource("2_412i4")
+
+[node name="DotCollision" type="CollisionShape2D" parent="." unique_id=222333805]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_fmdpk")
+script = ExtResource("3_sb6l6")

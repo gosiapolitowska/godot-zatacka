@@ -50,7 +50,7 @@ func _ready() -> void:
 	score_label.color = _player.info.color
 	score_label.text = str(_player.score)
 	max_lived_label.color = _player.info.color
-	max_lived_label.text = Globals.seconds_to_string(_player.max_sec_lived)
+	max_lived_label.text = Globals.millis_to_string(_player.max_msec_lived)
 	var config := _place_config[_player.place]
 	if _player.place > 3:
 		ranking_texture.hide()

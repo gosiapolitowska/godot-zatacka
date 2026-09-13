@@ -2,7 +2,5 @@
 
 [ext_resource type="Script" uid="uid://p30ynspqsmhm" path="res://scenes/temp_player_crash_area/temp_player_crash_area.gd" id="1_h554m"]
 
-[node name="TempPlayerCrashArea" type="Area2D" unique_id=1283358672]
+[node name="CrashArea" type="StaticBody2D" unique_id=533709516]
 script = ExtResource("1_h554m")
-
-[connection signal="area_exited" from="." to="." method="on_area_exited"]

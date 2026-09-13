@@ -5,7 +5,8 @@ var _config: Dictionary[Enums.ConfigName, ConfigValue] = {
 	Enums.ConfigName.ROUND_COUNT: IntConfigValue.new("Round count", 1, 11, 4),
 	Enums.ConfigName.SPEED: IntConfigValue.new("Speed", 100, 700, 300, 100),
 	Enums.ConfigName.PLAYER_SIZE: IntConfigValue.new("Player size", 4, 64, 16, 4),
-	Enums.ConfigName.ROTATION_RADIUS: IntConfigValue.new("Rotation Radius", 10, 100, 50, 10)
+	Enums.ConfigName.ROTATION_RADIUS: IntConfigValue.new("Rotation radius", 10, 100, 50, 10),
+	Enums.ConfigName.ROUND_DELAY: FloatConfigValue.new("Round delay", 1.0, 5.0, 2.0, 0.5)
 }
 
 var line_width: int = get_config(Enums.ConfigName.PLAYER_SIZE).get_min_value()
@@ -14,12 +15,12 @@ var round_mode := Enums.RoundMode.FIXED_ROUNDS
 var max_points := 20
 
 var default_colors: Array[Color] = [
-	Color(0.949, 0.451, 0.831, 1.0),
-	Color(0.0, 0.724, 0.896, 1.0),
+	Color(0.935, 0.332, 1.0, 1.0),
+	Color(0.355, 0.78, 1.0, 1.0),
 	Color(1.0, 1.0, 0.11, 1.0),
-	Color(1.0, 0.792, 0.0, 1.0),
-	Color(0.687, 0.615, 0.981, 1.0),
-	Color(1.0, 0.329, 0.401, 1.0)
+	Color(1.0, 0.561, 0.0, 1.0),
+	Color(1.0, 0.255, 0.518, 1.0),
+	Color(1.0, 1.0, 1.0, 1.0)
 ]
 
 var default_names: Array[String] = ["Matcha", "Onigiri", "Sakura", "Torii", "Mochi", "Matsuri"]

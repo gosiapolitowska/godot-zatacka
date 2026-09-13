@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bkuf3adgdyc7e"]
 
 [ext_resource type="Script" uid="uid://c25cd63a3f3xf" path="res://scenes/ui_elements/config_option.gd" id="1_r8lst"]
+[ext_resource type="PackedScene" uid="uid://b5cj64ewmva1y" path="res://scenes/ui_elements/info.tscn" id="2_grkc0"]
 
 [node name="ConfigOption" type="Control" unique_id=1903113331]
-custom_minimum_size = Vector2(640, 50)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,18 +15,28 @@ script = ExtResource("1_r8lst")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=709211077]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 608.0
+offset_bottom = 23.0
 
-[node name="Label" type="Label" parent="HBoxContainer" unique_id=2052259773]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=1140056359]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer" unique_id=2052259773]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "option"
+
+[node name="Info" parent="HBoxContainer/HBoxContainer" unique_id=1572575257 instance=ExtResource("2_grkc0")]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="ValueLabel" type="Label" parent="HBoxContainer" unique_id=785773962]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+text = "0"
 
 [node name="Slider" type="HSlider" parent="HBoxContainer" unique_id=957288969]
 unique_name_in_owner = true
