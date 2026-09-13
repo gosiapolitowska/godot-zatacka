@@ -19,6 +19,26 @@ This is my remake of a classic Zatacka game, which itself is a remake of [Achtun
 
 ![Gameplay 2](screenshots/gameplay2.png)
 
+## Roadmap
+
+* [x] basic game mechanics
+* [x] basic ui
+* [x] points (every time a player crashes, all active players get point each)
+* [x] player settings (player count, name, color, key binding)
+* [x] game settings (speed in px/sec, rotation radius in px, player dot size in px)
+* [x] mode: fixed roud count / fixed point count
+* [x] ranking screen at the end of game
+* [ ] start round coundow
+* [ ] animations
+  * [ ] player position at round start
+  * [ ] player crashed
+  * [ ] point gained
+* [ ] next round start mode: manual (pressing "next round" button) / automatic (with configurable delay in sec)
+* [ ] bots
+* [ ] sound
+  * [ ] music
+  * [ ] effects (start game, crash, end round, etc)
+
 ## Implementation
 
 Implementation done using [Godot](https://godotengine.org) game engine.
