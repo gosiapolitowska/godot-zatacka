@@ -1,4 +1,4 @@
-class_name AnimationComponent extends Node
+class_name SpawnAnimationComponent extends Node
 
 @export var _obj: Node2D
 @export var _parent: Node2D
@@ -6,7 +6,7 @@ class_name AnimationComponent extends Node
 @export var _alpa_animation_time_ratio := 0.2
 @export var _initial_scale := 10.0
 
-func with_values(parent: Node2D, obj: Node2D, initial_scale: float) -> AnimationComponent:
+func with_values(parent: Node2D, obj: Node2D, initial_scale: float) -> SpawnAnimationComponent:
 	_parent = parent
 	_obj = obj
 	_initial_scale = initial_scale

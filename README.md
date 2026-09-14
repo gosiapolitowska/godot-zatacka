@@ -32,9 +32,10 @@ This is my remake of a classic Zatacka game, which itself is a remake of [Achtun
 * [ ] \[UI\] player starting rotation indicator
 * [ ] \[UI\] start round coundow
 * [ ] \[UI\] animations
-  * [ ] player position at round start
-  * [ ] player crashed
+  * [x] player position at round start
+  * [x] player crashed
   * [ ] point gained
+  * [ ] countdown
 * [ ] \[mechanics\] next round start mode: manual (pressing "next round" button) / automatic (with configurable delay in sec)
 * [ ] \[AI\] bots
 * [ ] \[sound\] sound

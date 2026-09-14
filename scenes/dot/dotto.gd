@@ -57,16 +57,19 @@ func start():
 
 func _spawn_animation():
 	var circle_copy := circle.duplicate()
-	_add_animation(circle_copy)
+	_add_spawn_animation(circle_copy)
 	
 	var animation_circle = AnimationCircle.new()
 	animation_circle.color = _player_info.color
 	animation_circle.size = _animation_size
-	_add_animation(animation_circle)
+	_add_spawn_animation(animation_circle)
 
-func _add_animation(obj: Sprite2D):
-	var animation = AnimationComponent.new().with_values(self, obj, _animation_scale)
+func _add_spawn_animation(obj: Sprite2D):
+	var animation = SpawnAnimationComponent.new().with_values(self, obj, _animation_scale)
 	add_child(animation)
+
+func _add_crash_animation():
+	pass
 
 func _on_crash() -> void:
 	if _moving:
@@ -74,4 +77,6 @@ func _on_crash() -> void:
 			moved.emit(_old_position, position, _player_info)
 		collided.emit(_player_info)
 		_moving = false
-	queue_free()
+		collision.queue_free()
+		var animation = CrashAnimationComponent.new().with_values(self, _player_size)
+		add_child(animation)
