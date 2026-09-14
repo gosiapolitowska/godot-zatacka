@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://epje8uflto6j" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="Script" uid="uid://c2kre7yu414jt" path="res://scripts/config_manager.gd" id="2_5i0tg"]
+[ext_resource type="Script" uid="uid://big6otwdnxp3m" path="res://scenes/game/debug_layer.gd" id="2_5jirj"]
 [ext_resource type="PackedScene" uid="uid://5tu3pbimfj1d" path="res://scenes/menu/menu.tscn" id="2_kelw5"]
 [ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://assets/FlatUI4/kenneyUI-green.tres" id="2_lfrn8"]
 [ext_resource type="Script" uid="uid://btej5q8psqc26" path="res://scripts/game_manager.gd" id="3_bdhmt"]
@@ -9,7 +10,6 @@
 [ext_resource type="Script" uid="uid://o5jpn4dd4sh7" path="res://scripts/player_manager.gd" id="4_87uf6"]
 [ext_resource type="PackedScene" uid="uid://bjulgp5ngruk0" path="res://scenes/player_panel/player_panel.tscn" id="4_lfrn8"]
 [ext_resource type="Script" uid="uid://bnbiywnpnw5la" path="res://scripts/round_manager.gd" id="5_2a8rs"]
-[ext_resource type="Script" uid="uid://beq4gkskvoo42" path="res://debug/debug.gd" id="10_4j704"]
 [ext_resource type="PackedScene" uid="uid://blte6wqiysrh3" path="res://scenes/game_end_screen/game_end_screen.tscn" id="11_kp23o"]
 
 [node name="Game" type="Node" unique_id=1475631694 node_paths=PackedStringArray("game_manager")]
@@ -18,9 +18,7 @@ game_manager = NodePath("Managers/GameManager")
 
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=1970954475]
 layer = 20
-
-[node name="DebugNode" type="Node" parent="DebugLayer" unique_id=1662493148]
-script = ExtResource("10_4j704")
+script = ExtResource("2_5jirj")
 
 [node name="Managers" type="Node" parent="." unique_id=1839719189]
 

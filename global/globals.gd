@@ -1,6 +1,6 @@
 extends Node
 
-enum PlayerModifiedType { CREATED, UPDATED }
+var debug_mode := false
 
 func millis_to_string(time_in_msec: int) -> String:
 	var time = time_in_msec
