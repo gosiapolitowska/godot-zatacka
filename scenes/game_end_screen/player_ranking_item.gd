@@ -34,7 +34,7 @@ var _place_config: Dictionary[int, PlaceInfo] = {}
 @onready var place_label: Label = %PlaceLabel
 @onready var name_label: PlayerNameLabel = %PlayerNameLabel
 @onready var score_label: PlayerNameLabel = %ScoreLabel
-@onready var max_lived_label: PlayerNameLabel = %MaxLivedLabel
+@onready var lived_time: LivedTime = %LivedTime
 @onready var panel: Panel = %Ui
 
 var _player: Player
@@ -49,8 +49,8 @@ func _ready() -> void:
 	name_label.text = _player.info.name
 	score_label.color = _player.info.color
 	score_label.text = str(_player.score)
-	max_lived_label.color = _player.info.color
-	max_lived_label.text = Globals.millis_to_string(_player.max_msec_lived)
+	lived_time.color = _player.info.color
+	lived_time.msec = _player.max_msec_lived
 	var config := _place_config[_player.place]
 	if _player.place > 3:
 		ranking_texture.hide()

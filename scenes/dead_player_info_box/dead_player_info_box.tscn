@@ -44,8 +44,18 @@ vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 5
 
-[node name="LivedLabel" parent="HBoxContainer2/HBoxContainer" unique_id=594846527 instance=ExtResource("3_v7qsb")]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2/HBoxContainer" unique_id=2010977460]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LivedLabel" parent="HBoxContainer2/HBoxContainer/HBoxContainer" unique_id=594846527 instance=ExtResource("3_v7qsb")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 0
+
+[node name="MillisLabel" type="Label" parent="HBoxContainer2/HBoxContainer/HBoxContainer" unique_id=386308931]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 12

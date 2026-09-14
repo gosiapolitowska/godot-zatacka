@@ -2,7 +2,7 @@ extends Node
 
 enum PlayerModifiedType { CREATED, UPDATED }
 
-func millis_to_string(time_in_msec: int):
+func millis_to_string(time_in_msec: int) -> String:
 	var time = time_in_msec
 	var millis := time_in_msec % 1000
 	time = time / 1000

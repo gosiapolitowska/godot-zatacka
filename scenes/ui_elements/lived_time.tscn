@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dc646rxpqmedr"]
+
+[ext_resource type="Script" uid="uid://bu8go1450shye" path="res://scenes/ui_elements/lived_time.gd" id="1_c4ydb"]
+[ext_resource type="PackedScene" uid="uid://bkytqpo0g6alj" path="res://scenes/ui_elements/player_name_label.tscn" id="2_l7gv0"]
+
+[node name="LivedTime" type="Control" unique_id=142384046]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c4ydb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1173441683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="Main" parent="HBoxContainer" unique_id=1884230857 instance=ExtResource("2_l7gv0")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "01:32"
+vertical_alignment = 2
+
+[node name="Millis" parent="HBoxContainer" unique_id=371359193 instance=ExtResource("2_l7gv0")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = ".678"
+vertical_alignment = 2

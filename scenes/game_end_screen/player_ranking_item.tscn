@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bboayer7e6qg6" path="res://scenes/game_end_screen/player_ranking_item.gd" id="1_3v62r"]
 [ext_resource type="StyleBox" uid="uid://tir38k25wlpw" path="res://scenes/game_end_screen/item_style_box.tres" id="2_0jc5l"]
 [ext_resource type="PackedScene" uid="uid://bkytqpo0g6alj" path="res://scenes/ui_elements/player_name_label.tscn" id="2_3v62r"]
+[ext_resource type="PackedScene" uid="uid://dc646rxpqmedr" path="res://scenes/ui_elements/lived_time.tscn" id="4_0jc5l"]
 
 [node name="PlayerRankingItem" type="Control" unique_id=1198473830]
 layout_mode = 3
@@ -101,23 +102,17 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="Ui" unique_id=1864839909]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.85
-anchor_right = 0.85
+anchor_left = 0.83
+anchor_right = 0.83
 anchor_bottom = 1.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 20
 text = "max lived"
 vertical_alignment = 1
 
-[node name="MaxLivedLabel" parent="Ui" unique_id=35169677 instance=ExtResource("2_3v62r")]
+[node name="LivedTime" parent="Ui" unique_id=142384046 instance=ExtResource("4_0jc5l")]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.85
-anchor_right = 0.85
-anchor_bottom = 1.0
+anchor_left = 0.83
 offset_left = 30.0
-offset_right = 0.0
-offset_bottom = 0.0
-text = "01:01"
-vertical_alignment = 1

@@ -17,7 +17,7 @@ func animate():
 	var scale := _max_size / _size
 	var tween := create_tween()
 	var alpha_tween = create_tween()
-	alpha_tween.tween_property(_obj, "modulate:a", 0.0, _animation_time)
+	alpha_tween.tween_property(_obj, "modulate:a", 0.0, _animation_time).set_trans(Tween.TRANS_EXPO)
 	tween.tween_property(_obj, "scale", Vector2(scale, scale), 0.5 * _animation_time)
 	tween.tween_property(_obj, "scale", Vector2(0.5, 0.5), 0.5 * _animation_time)
 	tween.tween_callback(_cleanup)

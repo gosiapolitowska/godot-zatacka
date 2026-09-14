@@ -47,7 +47,6 @@ layer = 10
 
 [node name="Ui" type="Control" parent="CanvasLayer" unique_id=2059567127]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -162,8 +161,10 @@ theme_override_colors/icon_normal_color = Color(1, 0.90588236, 0, 1)
 theme_override_colors/icon_pressed_color = Color(1, 0.7764706, 0, 1)
 theme_override_colors/icon_hover_color = Color(1, 0.7764706, 0, 1)
 theme_override_constants/icon_max_width = 50
+disabled = true
 text = "bot"
 icon = ExtResource("10_y4i35")
+flat = true
 alignment = 0
 icon_alignment = 0
 

@@ -13,7 +13,7 @@ This is my remake of a classic Zatacka game, which itself is a remake of [Achtun
 
 ## Screenshots
 
-![Config screen](screenshots/config.png)
+![Config screen](screenshots/config2.png)
 
 ![Gameplay 1](screenshots/gameplay1.png)
 
